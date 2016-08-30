@@ -1,0 +1,6 @@
+0 -> No variables set by form
+1 -> Blank username and password
+2 -> Blank username
+3 -> Blank password
+4 -> User doesn't exist on DB
+5 -> Wrong password

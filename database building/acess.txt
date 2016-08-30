@@ -1,2 +1,3 @@
+db name: inak
 db user: admin
 db pass: engenharia
