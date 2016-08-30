@@ -1,8 +1,8 @@
 <?php
 
 require_once("database.php");
-$idUser = "email";	//name of input field
-$idPass = "pwd";	//name of input field
+$idUser = "inputEmail";	//name of input field
+$idPass = "inputPassword";	//name of input field
 $GO = "profile.php";	//load after correct login
 
 function returnError($n, $name=NULL){
