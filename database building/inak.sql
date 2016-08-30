@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Ago-2016 às 19:28
+-- Generation Time: 30-Ago-2016 às 20:29
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -46,7 +46,7 @@ CREATE TABLE `deck` (
   `name` varchar(30) NOT NULL,
   `shared` tinyint(1) NOT NULL,
   `nextCardPlay` datetime DEFAULT NULL,
-  `username` varchar(20) NOT NULL
+  `ownerId` varchar(90) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -77,7 +77,7 @@ ALTER TABLE `card`
 --
 ALTER TABLE `deck`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `username` (`username`);
+  ADD KEY `ownerId` (`ownerId`);
 
 --
 -- Indexes for table `user`
@@ -98,7 +98,7 @@ ALTER TABLE `card`
 -- AUTO_INCREMENT for table `deck`
 --
 ALTER TABLE `deck`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
@@ -113,7 +113,7 @@ ALTER TABLE `card`
 -- Limitadores para a tabela `deck`
 --
 ALTER TABLE `deck`
-  ADD CONSTRAINT `deck_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`email`) ON DELETE CASCADE;
+  ADD CONSTRAINT `deck_ibfk_1` FOREIGN KEY (`ownerId`) REFERENCES `user` (`email`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
