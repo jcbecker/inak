@@ -1,11 +1,8 @@
 <?php
 
+require_once("database.php");
 $idUser = "email";	//name of input field
 $idPass = "pwd";	//name of input field
-$DB_HOST = "localhost";
-$DB_NAME = "inak";
-$DB_USER = "admin";
-$DB_PASS = "engenharia";
 $GO = "profile.php";	//load after correct login
 
 function returnError($n, $name=NULL){
