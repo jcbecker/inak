@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Ago-2016 às 20:24
+-- Generation Time: 30-Ago-2016 às 19:28
 -- Versão do servidor: 10.1.13-MariaDB
 -- PHP Version: 7.0.5
 
@@ -56,9 +56,8 @@ CREATE TABLE `deck` (
 --
 
 CREATE TABLE `user` (
-  `username` varchar(20) NOT NULL,
+  `email` varchar(90) NOT NULL,
   `password` varchar(256) NOT NULL,
-  `email` varchar(50) NOT NULL,
   `picture` varchar(36) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -84,7 +83,7 @@ ALTER TABLE `deck`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -94,12 +93,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `card`
 --
 ALTER TABLE `card`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `deck`
 --
 ALTER TABLE `deck`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -114,7 +113,7 @@ ALTER TABLE `card`
 -- Limitadores para a tabela `deck`
 --
 ALTER TABLE `deck`
-  ADD CONSTRAINT `deck_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`username`) ON DELETE CASCADE;
+  ADD CONSTRAINT `deck_ibfk_1` FOREIGN KEY (`username`) REFERENCES `user` (`email`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -41,7 +41,7 @@ if (mysqli_connect_errno())
 	return;
 }
 
-$query = "SELECT * FROM user WHERE username='".$id."'";
+$query = "SELECT * FROM user WHERE email='".$id."'";
 $res = mysqli_query($con, $query);
 
 if(!$res || (mysqli_affected_rows($con)==0)){
