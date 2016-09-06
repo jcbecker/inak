@@ -4,3 +4,24 @@
  .showHome {
  	padding: 50px;
  }
+
+ #profile{
+     height: auto;
+     width: 95%;
+
+ }
+ #profile_body{
+     height: auto;
+     width: 45%;
+     margin: auto auto auto 28%;
+
+ }
+ #profile_img{
+     width: 200px;
+     height: 200px;
+     margin: 0 auto;
+ }
+ #profile_text{
+     margin-left: 30%;
+     margin-top: 10%;
+ }
