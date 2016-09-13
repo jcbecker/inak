@@ -4,7 +4,8 @@
                 <div class="row">
                     <div class="col-md-12" id = "profile_body">
                         <div   id = "profile_img">
-                            <img src ="img/user.png"/ width="100%" height="100%">
+							<!--<img src="..." alt="..." class="img-circle"> Carrega a imagem em circulo-->
+                            <img src ="img/user.png"/ width="100%" height="100%">	
                         </div>
                         <div id = "profile_text">
                             <p>Nick: Marcelinho Bug</p>
