@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-        <title>Home Page</title>
-        <meta charset="UTF-8">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/inak.css" rel="stylesheet">
-  </head>
-  <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">INAK</a>
-        </div>
-      </div>
-    </nav>
+<?php include "menu.php"; ?>
 
      <div class="jumbotron">
       <div class="container showHome">
@@ -57,14 +36,4 @@ Here you can learn using Flash Cards . Based TWO Fundamentals structures , which
 
       <hr>
 
-      <footer>
-        <p>&copy; 2016 INAK, Inc .</p>
-      </footer>
-  </div> <!-- /container -->
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  </body>
-
-</html>
+<?php include "footer.php"; ?>
