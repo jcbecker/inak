@@ -28,11 +28,9 @@ if(!strcmp($id, "")){
 		return;
 	}
 }
-
 if(!strcmp($pass, "")){
 	returnError(3, $id);
 }
-
 $con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
 if (mysqli_connect_errno())
@@ -40,21 +38,21 @@ if (mysqli_connect_errno())
 	echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	return;
 }
-
 $query = "SELECT * FROM user WHERE email='".$id."'";
 $res = mysqli_query($con, $query);
+
 
 if(!$res || (mysqli_affected_rows($con)==0)){
 	returnError(4);
 	return;
 }
-
 $row = mysqli_fetch_assoc($res);
 if(strcmp(sha1($pass), $row['password'])){
 	returnError(5, $id);
 	return;
 }
 else{
+	
 	header('Location: '.$GO);
 	mysqli_close($con);
 }
