@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/inak.css" rel="stylesheet">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <?php  
 			session_start();
@@ -33,9 +33,9 @@
 						if((isset ($_SESSION['user']) == true)){
 								?>
 							<ul class="nav navbar-nav">
-								<li><a href="#">Home</a></li>
-								<li class="active"><a href="#">Account<span class="sr-only">(current)</span></a></li>
-								<li><a href="#">Decks</a></li>
+								<li>				<a href="#">Home</a></li>
+								<li class="active">	<a href="profile.php">Account<span class="sr-only">(current)</span></a></li>
+								<li>				<a href="homeDeck.php">Decks</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<li><a ><?php echo $logado." "; ?></a></li>
