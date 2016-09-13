@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 require_once("database.php");
 $idUser = "inputEmail";	//name of input field
 $idPass = "inputPassword";	//name of input field
-$GO = "profile.php";	//load after correct login
+$GO = "homeDeck.php";	//load after correct login
 
 function returnError($n, $name=NULL){
 	if(isset($name)) header('Location: index.php?error='.$n.'&login_name='.$name);
@@ -49,10 +49,11 @@ if(!$res || (mysqli_affected_rows($con)==0)){
 $row = mysqli_fetch_assoc($res);
 if(strcmp(sha1($pass), $row['password'])){
 	returnError(5, $id);
+	unset ($_SESSION['email']);
 	return;
 }
 else{
-	
+	$_SESSION['user'] = $row['email'];
 	header('Location: '.$GO);
 	mysqli_close($con);
 }

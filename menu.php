@@ -7,7 +7,14 @@
         <link href="css/inak.css" rel="stylesheet">
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        
+        <?php  
+			session_start();
+			if((!isset ($_SESSION['user']) == true)){
+				unset($_SESSION['user']);
+				//header('location:index.php');
+			}
+			$logado = $_SESSION['user'];
+		?>
   </head>
   <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -22,14 +29,19 @@
                      <a class="navbar-brand" href="#">INAK</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Home</a></li>
-                        <li class="active"><a href="#">Account<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Decks</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Logout</a></li>
-                    </ul>
+                   <?php
+						if((isset ($_SESSION['user']) == true)){
+								?>
+							<ul class="nav navbar-nav">
+								<li><a href="#">Home</a></li>
+								<li class="active"><a href="#">Account<span class="sr-only">(current)</span></a></li>
+								<li><a href="#">Decks</a></li>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><a ><?php echo $logado." "; ?></a></li>
+								<li><a href="logout.php">Logout</a></li>
+							</ul>
+					<?php } ?> 
                 </div>
             </div>
         </nav>
