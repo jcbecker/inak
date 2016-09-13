@@ -1,3 +1,9 @@
+ body {
+	padding-top:80px;
+ }
+ .jumbotron {
+	margin-top: -30px;
+ }
  input {
  	margin-bottom:25px;
  }
@@ -29,4 +35,9 @@
  }
 footer {
     text-align:center;
+}
+.list-group a {
+	font-family: 'Raleway', sans-serif;
+	font-size:18px;
+	text-align:center;
 }
