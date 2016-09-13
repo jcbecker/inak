@@ -9,7 +9,7 @@
                         </div>
                         <div id = "profile_text">
                             <p>Nick: Marcelinho Bug</p>
-                            <p>E-mail: marcelinho@gmail.uy</p>
+                            <p>E-mail: <?php echo $logado." "; ?></p>
                             <p>Decks: 333</p>
                         </div>
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Edit account</button>

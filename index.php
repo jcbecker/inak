@@ -4,8 +4,9 @@
       <div class="container showHome">
         <h1>Welcome to INAK!</h1>
         <p style="text-align:justify">
-
-Here you can learn using Flash Cards . Based TWO Fundamentals structures , which are decks ( platforms) and the card ( cards). CARDS THE INFORMATION What are like wish memorize texts may be , Images , mental maps .</p>
+			Here you can learn using Flash Cards . Based TWO Fundamentals structures , 
+			which are decks ( platforms) and the card ( cards). CARDS THE INFORMATION What are like wish memorize texts may be , 
+			Images , mental maps .</p>
       </div>
     </div>
 
@@ -28,7 +29,7 @@ Here you can learn using Flash Cards . Based TWO Fundamentals structures , which
                 <label for="inputEmail" class="sr-only"> E-mail</label>
                 <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <label for="inputPassword" class="sr-only">Passwd</label>
-               <input type="password" name="inputPassword" class="form-control" placeholder="Password" required>
+				<input type="password" name="inputPassword" class="form-control" placeholder="Password" required>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">SIGN IN</button>
              </form>
        </div>
