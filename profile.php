@@ -36,7 +36,7 @@
 										<p>Are you sure you wanna delete your account?</p>
 									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+										<button type="button" class="btn btn-default" data-dismiss="modal" onclick="javascript:window.location.href='delete_account.php';">Yes</button>
 									</div>
 								</div>
 							</div>
