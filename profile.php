@@ -10,7 +10,7 @@
                     <div class="col-md-12" id = "profile_body">
                         <div   id = "profile_img">
 							<!--<img src="..." alt="..." class="img-circle"> Carrega a imagem em circulo-->
-                            <img src ="userPicture/userDefault.png"/ width="100%" height="100%">	
+                            <img src ="userPicture/<?php echo $_SESSION['picture']?>"/ width="100%" height="100%">	
                         </div>
                         <div id = "profile_text">
                             <p>Nick: <?php echo $_SESSION['user']." "; ?></p></p>
