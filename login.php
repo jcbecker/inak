@@ -45,8 +45,10 @@
 		return;
 	}
 	else{
-		$_SESSION['user'] = $row['email'];
-		header('Location: '.$GO);
+		$_SESSION['user'] = $row['userName'];
+		$_SESSION['email'] = $row['email'];
+		$_SESSION['picture'] = $row['picture'];
 		mysqli_close($con);
+		header('Location: '.$GO);
 	}
 ?>

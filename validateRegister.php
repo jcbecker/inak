@@ -20,7 +20,8 @@
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		return;
 	}
-	$query = "INSERT INTO user (email, password, userName) VALUES ('".$email."', '".sha1($pwd)."', '".$username."')";
+
+	$query = "INSERT INTO user (email, password, userName, picture) VALUES ('".$email."', '".sha1($pwd)."', '".$username."','userDefault.jpg')";
 	$res = mysqli_query($con, $query);
 	if(!$res || (mysqli_affected_rows($con)==0)){
 		header('Location: index.php?err=2');	//User not inserted in DB
