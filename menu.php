@@ -9,11 +9,10 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <?php  
 			session_start();
-			if((!isset ($_SESSION['user']) == true)){
-				unset($_SESSION['user']);
-				//header('location:index.php');
+			if((isset ($_SESSION['user']) == true)){
+				$logado = $_SESSION['user'];
 			}
-			$logado = $_SESSION['user'];
+			
 		?>
   </head>
   <body>
