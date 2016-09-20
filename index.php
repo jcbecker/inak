@@ -1,4 +1,37 @@
 <?php include "menu.php"; ?>
+	
+<script type="text/javascript">
+  function checkForm(form)
+  {
+    if(form.inputPassword.value == "") {
+      alert("Error: Password cannot be blank!");
+      form.inputPassword.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form.inputUserName.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.inputUserName.focus();
+      return false;
+    }
+
+    if(form.inputPassword.value == form.inputPassword2.value) {
+      if(form.inputPassword.value.length > 256) {
+        alert("Error: Password must contain less then 256 characters!");
+        form.inputPassword.focus();
+        return false;
+      }
+    } 
+    else{
+      alert("Error: The passwords are different!");
+      form.inputPassword.focus();
+      return false;
+    }
+
+    return true;
+  }
+</script>
+
 
      <div class="jumbotron">
       <div class="container showHome">
@@ -25,11 +58,17 @@
         </div>
         <div class="col-md-6">
           <h2>REGISTRAR-SE</h2>
-           <form class="form-signin" action="validateRegister.php" method="POST">
+           <form class="form-signin" action="validateRegister.php" method="POST" onsubmit="return checkForm(this);">
+                <label for="inputUserName" class="sr-only">Username</label>
+				<input type="text" name="inputUserName" class="form-control" placeholder="User name" required>
                 <label for="inputEmail" class="sr-only"> E-mail</label>
                 <input type="email" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
                 <label for="inputPassword" class="sr-only">Passwd</label>
 				<input type="password" name="inputPassword" class="form-control" placeholder="Password" required>
+				<label for="inputPassword2" class="sr-only">Passwd2</label>
+				<input type="password" name="inputPassword2" class="form-control" placeholder="Retype password" required>
+				
+				
                 <button class="btn btn-lg btn-primary btn-block" type="submit">SIGN IN</button>
              </form>
        </div>
