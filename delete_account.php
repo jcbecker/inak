@@ -1,13 +1,13 @@
 <?php
 	require_once("database.php");
 	session_start();
-	$userEmail = 'user';
+	$userName = 'user';
 	
-	if((!isset ($_SESSION[$userEmail]) == true)){
+	if((!isset ($_SESSION[$userName]) == true)){
 		header('Location: index.php');
 	}
 	$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
-	$query = "DELETE FROM user WHERE user.email = '".$_SESSION[$userEmail]."'";
+	$query = "DELETE FROM user WHERE user.userName = '".$_SESSION[$userName]."'";
 	$res = mysqli_query($con, $query);
 
 	if(!$res){

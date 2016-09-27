@@ -13,7 +13,6 @@
 	$email = $_POST[$emailField];
 	$pwd = $_POST[$passwordField];
 	$username = $_POST[$userNameField];
-	
 	$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 	if (mysqli_connect_errno())
 	{
@@ -28,8 +27,6 @@
 		return;
 	}
 	else{
-		$_SESSION['user'] = $username;
-		$_SESSION['email'] = $email;
 		mysqli_close($con);
 		header("Location: ".$GO);
 	}
