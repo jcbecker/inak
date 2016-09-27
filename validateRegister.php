@@ -5,7 +5,7 @@
 	$passwordField = "inputPassword";	//Name of input field (password)
 	$userNameField = "inputUserName";	//Name of input field (userName)
 	
-	$GO = "homeDeck.php";	//Load after correct register
+	$GO = "index.php";	//Load after correct register
 	if(!isset($_POST[$emailField]) || !isset($_POST[$passwordField])){
 		header('Location: index.php?err=1');
 		return;
@@ -28,9 +28,9 @@
 		return;
 	}
 	else{
-		mysqli_close($con);
 		$_SESSION['user'] = $username;
 		$_SESSION['email'] = $email;
+		mysqli_close($con);
 		header("Location: ".$GO);
 	}
 ?>

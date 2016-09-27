@@ -67,8 +67,6 @@
 				<input type="password" name="inputPassword" class="form-control" placeholder="Password" required>
 				<label for="inputPassword2" class="sr-only">Passwd2</label>
 				<input type="password" name="inputPassword2" class="form-control" placeholder="Retype password" required>
-				
-				
                 <button class="btn btn-lg btn-primary btn-block" type="submit">SIGN IN</button>
              </form>
        </div>
