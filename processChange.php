@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['user'])){
-	$sessionUser = $_SESSION['userName'];
+	$sessionUser = $_SESSION['user'];
 }
 else{
 	header("Location: index.php");
@@ -26,39 +26,37 @@ $email = $res['email'];
 $password = $res['password'];
 if(isset($res['picture'])) $picture = $res['picture']; 
 
-$idUser = "e-mail";	//name of input field
-$idPass = "password";	//name of input field
-$idPicture = "picture";	//name of input field
+$idUser = "inputUserName";	//name of input field
+$idEmail = "inputEmail";	//name of input field
 
 $flag=0;
-if(isset($_POST[$idUser])){
-	$newEmail = trim($_POST[$idUser]);
+if(isset($_POST[$idEmail])){
+	$newEmail = $_POST[$idEmail];
 	$newEmail = addslashes($newEmail);
 	if(strcmp($newEmail,"")){
 		$email = $newEmail;
 	}
-	$flag++;
 }
 
-if(isset($_POST[$idPass])){
-	$newPassword = trim($_POST[$idPass]);
-	$newPassword = addslashes($newPassword);
-	if(strcmp($newPassword,"")){
-		$password =$newPassword;
+if(isset($_POST[$idUser])){
+	$newUsername = $_POST[$idUser];
+	$newUsername = addslashes($newUsername);
+	if(strcmp($newUsername,"")){
+		$userName =$newUsername;
 	}
-	$flag++;
+	echo"aqui:".$userName;
 }
 
-if(isset($_FILES[$idPicture])){
-	if(!strcmp(substr($_FILES[$idPicture]['type'], 0, 5),"image")){
-		$picture = $sessionUser.".jpg";
-		if(!move_uploaded_file($_FILES[$idPicture]['tmp_name'], 'userPicture/'.$picture)) echo "Error: uploaded image";
-	}
-}
-
-$query = "UPDATE user SET email='".$email."', password='".sha1($password)."', picture='".$picture."' WHERE email='".$sessionUser."'";
+$query = "UPDATE user SET email='".$email."', userName='".$userName."' WHERE userName='".$sessionUser."'";
 $res = mysqli_query($con, $query);
-if(mysqli_affected_rows($con)<1) echo "Not updated";
+if(mysqli_affected_rows($con)<1){
+	echo "Not updated";
+}
+else{
+	$_SESSION['user'] = $userName;
+	$_SESSION['email'] = $email;
+}
+
 mysqli_close($con);
 header("Location: ".$GO);
 
