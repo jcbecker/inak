@@ -29,7 +29,7 @@ $idUser = "inputUserName";	//name of input field
 $idEmail = "inputEmail";	//name of input field
 $idPicture = "inputPicture";	//name of input field
 
-$flag=0;
+$flag=0;	//controla se houve alterações na imagem
 if(isset($_POST[$idEmail])){
 	$newEmail = $_POST[$idEmail];
 	$newEmail = addslashes($newEmail);
