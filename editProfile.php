@@ -9,9 +9,10 @@
                             <br><br>
                         </div>
                         
-                        <form method="post" action="processChange.php">
-							Nick:<input type="text" name="inputUserName" class="form-control" value="<?php echo $_SESSION['user']." "; ?>" required>
-							E-mail:<input type="text" name="inputEmail" class="form-control" value="<?php echo $_SESSION['email']." "; ?>" required>
+                        <form method="post" action="processChange.php" enctype="multipart/form-data">
+							Nick:<input type="text" name="inputUserName" class="form-control" value="<?php echo $_SESSION['user']; ?>" required>
+							E-mail:<input type="text" name="inputEmail" class="form-control" value="<?php echo $_SESSION['email']; ?>" required>
+							Foto: <input type="file" name="inputPicture" /><br />
 							<button type="submit" class="btn btn-lg btn-primary btn-block">Save changes</button>
                         </form>
 						

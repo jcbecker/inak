@@ -5,7 +5,6 @@ if(isset($_SESSION['user'])){
 }
 else{
 	header("Location: index.php");
-	break;
 }
 //$sessionUser = "usuario@teste.com";
 require_once("database.php");
@@ -28,6 +27,7 @@ if(isset($res['picture'])) $picture = $res['picture'];
 
 $idUser = "inputUserName";	//name of input field
 $idEmail = "inputEmail";	//name of input field
+$idPicture = "inputPicture";	//name of input field
 
 $flag=0;
 if(isset($_POST[$idEmail])){
@@ -47,7 +47,17 @@ if(isset($_POST[$idUser])){
 	echo"aqui:".$userName;
 }
 
-$query = "UPDATE user SET email='".$email."', userName='".$userName."' WHERE userName='".$sessionUser."'";
+if(isset($_FILES[$idPicture])){
+	if(!strcmp(substr($_FILES[$idPicture]['type'], 0, 5),"image")){
+		$picture = $sessionUser.".jpg";
+		if(!move_uploaded_file($_FILES[$idPicture]['tmp_name'], 'userPicture/'.$picture)) echo "Error: uploaded image";
+		else $flag = 1;
+	}
+}
+
+$query = "UPDATE user SET email='".$email."', userName='".$userName."'";
+if($flag) $query.=", picture='".$picture."'";
+$query.= " WHERE userName='".$sessionUser."'";
 $res = mysqli_query($con, $query);
 if(mysqli_affected_rows($con)<1){
 	echo "Not updated";
@@ -55,6 +65,7 @@ if(mysqli_affected_rows($con)<1){
 else{
 	$_SESSION['user'] = $userName;
 	$_SESSION['email'] = $email;
+	$_SESSION['picture'] = $picture;
 }
 
 mysqli_close($con);
