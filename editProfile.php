@@ -1,10 +1,4 @@
-<?php include "menu.php"; 
-	session_start();
-	
-	if((!isset ($_SESSION['user']) == true)){
-		header('Location: index.php');
-	}
-?>
+<?php include "menu.php"; ?>
         <div  >
             <div class="container showHome" id ="profile">
                 <div class="row">
