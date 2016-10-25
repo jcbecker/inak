@@ -14,6 +14,8 @@
 			}
 			
 		?>
+		
+		<script src="js/jquery.min.js" type="text/javascript"></script>
   </head>
   <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">

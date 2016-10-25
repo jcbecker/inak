@@ -32,6 +32,22 @@
   }
 </script>
 
+<?php
+	if(isset($_GET['error'])){
+		$errorLogin = $_GET['error'];
+	}
+	if(!isset($errorLogin)) $errorLogin = 0;
+?>
+
+<script>
+	$(document).ready(function(){
+		var errorLogin = "<?php echo($errorLogin); ?>"; 
+		if(errorLogin==4){
+			alert("Please, check your e-mail and your password. If you aren't registered, sign up!");
+		}
+	});
+</script>
+
 
      <div class="jumbotron">
       <div class="container showHome">

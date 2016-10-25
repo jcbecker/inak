@@ -5,7 +5,7 @@
 	$passwordField = "inputPassword";	//Name of input field (password)
 	$userNameField = "inputUserName";	//Name of input field (userName)
 	
-	$GO = "index.php";	//Load after correct register
+	$GO = "homeDeck.php";	//Load after correct register
 	if(!isset($_POST[$emailField]) || !isset($_POST[$passwordField])){
 		header('Location: index.php?err=1');
 		return;
@@ -14,6 +14,12 @@
 	$pwd = $_POST[$passwordField];
 	$username = $_POST[$userNameField];
 	$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+	
+	if(!strcmp($username,"userDefault")){
+		header('Location: index.php?err=19');
+		exit;
+	}
+	
 	if (mysqli_connect_errno())
 	{
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -27,6 +33,9 @@
 		return;
 	}
 	else{
+		$_SESSION['user'] = $username;
+		$_SESSION['email'] = $email;
+		$_SESSION['picture'] = "userDefault.jpg";
 		mysqli_close($con);
 		header("Location: ".$GO);
 	}
