@@ -14,8 +14,8 @@
 			}
 			
 		?>
-		
-		<script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="js/jquery.min.js" type="text/javascript"></script>
+       
   </head>
   <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -27,14 +27,14 @@
                          <span class="icon-bar"></span>
                          <span class="icon-bar"></span>
                      </button>
-                     <a class="navbar-brand" href="#">INAK</a>
+                     <a class="navbar-brand">INAK</a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                    <?php
 						if((isset ($_SESSION['user']) == true)){
 								?>
-							<ul class="nav navbar-nav">
-								<li><a href="#">Home</a></li>
+							<ul class="nav navbar-nav" id="navTop">
+								<!-- <li><a href="">Home</a></li> -->
 								<li><a href="profile.php">Account</a></li>
 								<li><a href="homeDeck.php">Decks</a></li>
 							</ul>
