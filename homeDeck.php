@@ -19,7 +19,7 @@
 						$res =  mysqli_query($con, $query);
 						while($aux = $res->fetch_assoc()) {
 								?>
-								<a href="#" class="list-group-item"><?php echo $aux["name"] ?>  <span class="badge">1</span></a>
+			<a href="changeDeck.php?id=<?php echo $aux["id"] ?>" class="list-group-item"><?php echo $aux["name"] ?>  <span class="badge">1</span></a>
 								<?php 
 									} 
 								?>
