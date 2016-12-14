@@ -8,6 +8,23 @@
 	$var = $aux['id'];
 				
 ?>
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#example').DataTable( {
+        columnDefs: [ {
+            targets: [ 0 ],
+            orderData: [ 0, 1 ]
+        }, {
+            targets: [ 1 ],
+            orderData: [ 1, 0 ]
+        }, {
+            targets: [ 4 ],
+            orderData: [ 4, 0 ]
+        } ]
+    } );
+} );
+			
+		</script>
 <div class="container">
 	<div class="row"> 
 	<div class="col-md-4">
@@ -29,11 +46,43 @@
                	<?php echo ($aux['shared'] == 1) ? "checked": "" ?>
                >
                 <input type="hidden" name="id" value="<?php echo $aux['id'] ?>"  />
+                </br>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Update</button>
+                <button type="button" class="btn btn-lg btn-danger btn-block" data-toggle="modal" data-target="#myModal" action="deleteDeck.php?id=<?php echo $aux['id'] ?>">Delete Deck</button>
              </form>
+             <div id="myModal" class="modal fade" role="dialog">
+							<div class="modal-dialog modal-sm">
+
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Delete Deck</h4>
+									</div>
+									<div class="modal-body">
+										<p>Are you sure you wanna delete your Deck?</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal" onclick="javascript:window.location.href='deleteDeck.php?id=<?php echo $aux['id'] ?>';">Yes</button>
+									</div>
+								</div>
+							</div>
+						</div>
 	</div>
 	<div class="col-md-8">
 		Lista de Cards
+		<table class=".table-condensed" id="example">
+			<tr>
+				<th>Front</th>
+				<th>Back</th> 
+			</tr>
+			<tr>
+				<td>Dad</td>
+				<td>Pai</td>
+			</tr>
+
+		</table>
+
 
 	</div> 
 </div>

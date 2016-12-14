@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/inak.css" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/datatables.min.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <?php  
 			session_start();
@@ -15,6 +16,9 @@
 			
 		?>
         <script src="js/jquery.min.js" type="text/javascript"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+        
        
   </head>
   <body>
