@@ -8,27 +8,11 @@
 	$var = $aux['id'];
 				
 ?>
-<script type="text/javascript">
-	$(document).ready(function() {
-    $('#example').DataTable( {
-        columnDefs: [ {
-            targets: [ 0 ],
-            orderData: [ 0, 1 ]
-        }, {
-            targets: [ 1 ],
-            orderData: [ 1, 0 ]
-        }, {
-            targets: [ 4 ],
-            orderData: [ 4, 0 ]
-        } ]
-    } );
-} );
-			
-		</script>
+
 <div class="container">
 	<div class="row"> 
 	<div class="col-md-4">
-		Edição de Deck:
+		
 		<h2>Deck</h2>
               <form class="form-signin" action="updateDeck.php" method="POST">
                 <label for="inputName" >Name</label>
@@ -36,12 +20,12 @@
                 </br>
                 <label for="inputShared" >Shared</label>
                </br>
-                Não
+                No
                <input type="checkbox" name="inputShared" class="form-control" value="0" 
 				<?php echo ($aux['shared'] == 0) ? "checked": "" ?>
 				>
                </br>
-               Sim
+               Yes
                <input type="checkbox" name="inputShared" class="form-control" value="1" 
                	<?php echo ($aux['shared'] == 1) ? "checked": "" ?>
                >
@@ -70,16 +54,27 @@
 						</div>
 	</div>
 	<div class="col-md-8">
-		Lista de Cards
+		<a class="btn btn-lg btn-primary btn-block" href="createCard.php?id=<?php echo $aux['id'] ?>" >Add Card</a>
+        
+        </br>
 		<table class=".table-condensed" id="example">
-			<tr>
-				<th>Front</th>
-				<th>Back</th> 
-			</tr>
-			<tr>
-				<td>Dad</td>
-				<td>Pai</td>
-			</tr>
+			<thead>
+				<tr>
+					<th>Front</th>
+					<th>Back</th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+					<tr>
+						<td>Dad</td>
+						<td>Pai</td>
+						<td><a href="">Update</a></td>
+						<td><a href="">Delete</a></td>
+					</tr>
+							</tbody>
+			
 
 		</table>
 

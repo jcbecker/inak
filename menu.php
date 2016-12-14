@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/inak.css" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/datatables.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+ 
+        
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
         <?php  
 			session_start();
@@ -16,10 +18,14 @@
 			
 		?>
         <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
-        
-       
+        <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function() {
+                $('#example').DataTable();
+                $('#example').addClass('table table-striped table-bordered');
+            } );
+        </script>
+    
   </head>
   <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
