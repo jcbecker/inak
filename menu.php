@@ -7,15 +7,12 @@
         <link href="css/inak.css" rel="stylesheet">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
- 
-        
+
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-        <?php  
+        <?php
 			session_start();
-			if((isset ($_SESSION['user']) == true)){
+			if((isset ($_SESSION['user']) == true))
 				$logado = $_SESSION['user'];
-			}
-			
 		?>
         <script src="js/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
@@ -25,7 +22,6 @@
                 $('#example').addClass('table table-striped table-bordered');
             } );
         </script>
-    
   </head>
   <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -52,7 +48,7 @@
 								<li><a ><?php echo $logado." "; ?></a></li>
 								<li><a href="logout.php">Logout</a></li>
 							</ul>
-					<?php } ?> 
+					<?php } ?>
                 </div>
             </div>
         </nav>

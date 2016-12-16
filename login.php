@@ -5,8 +5,10 @@
 	$idPass = "inputPassword";	//name of input field
 	$GO = "homeDeck.php";	//load after correct login
 	function returnError($n, $name=NULL){
-		if(isset($name)) header('Location: index.php?error='.$n.'&login_name='.$name);
-		else header('Location: index.php?error='.$n);
+		if(isset($name))
+			header('Location: index.php?error='.$n.'&login_name='.$name);
+		else
+			header('Location: index.php?error='.$n);
 	}
 	if(!isset($_POST[$idUser]) || !isset($_POST[$idPass])){
 		returnError(0);
@@ -18,15 +20,13 @@
 		if(!strcmp($pass, "")){
 			returnError(1);
 			return;
-		}
-		else{
+		} else {
 			returnError(2);
 			return;
 		}
 	}
 	if(!strcmp($pass, ""))
 		returnError(3, $id);
-		
 	$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 	if (mysqli_connect_errno()){
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -43,8 +43,7 @@
 		returnError(5, $id);
 		unset ($_SESSION['email']);
 		return;
-	}
-	else{
+	} else {
 		$_SESSION['user'] = $row['userName'];
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['picture'] = $row['picture'];
