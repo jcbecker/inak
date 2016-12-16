@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" id ="profile_body">
-            <h2 align="center">Card</h2>
+            <h2 align="center">Create Card</h2>
             <form class="form-signin" action="insertCard.php" method="POST">
                 <label for="inputName" >Front</label>
                 <input type="name" name="inputFront" class="form-control" placeholder="Front name..." required autofocus>

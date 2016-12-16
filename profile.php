@@ -14,7 +14,7 @@
 				<p><b>E-mail:</b> <?php echo $_SESSION['email']." "; ?></p>
 				<p><b>Decks:</b> 333</p>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" onclick="window.location.href='editProfile.php'">Edit Account</button>
+			<button class="btn btn-lg btn-primary btn-block" onclick="window.location.href='updateProfile.php'">Edit Account</button>
 			<!-- Trigger the modal with a button -->
 			<button type="button" class="btn btn-lg btn-primary btn-block" data-toggle="modal" data-target="#myModal" action="delete_account.php">Delete account</button>
 			<!-- Modal -->

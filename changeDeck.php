@@ -11,7 +11,7 @@
 			<h2>Deck</h2>
 			<form class="form-signin" action="updateDeck.php" method="POST">
 				<label for="inputName" >Name</label>
-				<input type="name" name="inputName" value="<?php echo $aux['name'] ?>"class="form-control" placeholder="Deck name..." required autofocus>
+				<input type="name" name="inputName" value="<?php echo $aux['name'] ?>" class="form-control" placeholder="Deck name..." required autofocus>
 				</br>
 				<label for="inputShared" >Shared</label>
 				</br>
@@ -65,8 +65,8 @@
 					<tr>
 						<td><?php echo $aux2["front"] ?></td>
 						<td><?php echo $aux2["back"] ?></td>
-						<td><a href="">Update</a></td>
-						<td><a href="">Delete</a></td>
+						<td><a href="updateCard.php?id=<?php echo $aux2["id"]?>">Update</a></td>
+						<td><a href="deleteCard.php?id=<?php echo $aux2["id"]?>&id_deck=<?php echo $aux["id_deck"]?>">Delete</a></td>
 					</tr>
 					<?php } ?>
 				</tbody>

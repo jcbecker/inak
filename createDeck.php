@@ -1,9 +1,8 @@
 <?php include "menu.php"; ?>
 <div class="container">
-    <p>Create your Deck here.</p>
     <div class="row">
-        <div class="col-md-4">
-            <h2>Deck</h2>
+        <div class="col-md-4" id = "profile_body">
+            <h2 align="center">Create Deck</h2>
             <form class="form-signin" action="insertDeck.php?id=idUserOwnerDeck" method="POST">
                 <label for="inputName" >Name</label>
                 <input type="name" name="inputName" class="form-control" placeholder="Deck name..." required autofocus>
@@ -21,4 +20,5 @@
         </div>
     </div>
 </div>
+<hr>
 <?php include "footer.php"; ?>
