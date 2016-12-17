@@ -1,6 +1,5 @@
 <?php include "menu.php" ?>
 <div class="container" >
-	<p><a class="btn btn-primary btn-md" href="createDeck.php" role="button">Create Deck</a></p>
 	<div class="row">
 		<div class="list-group" class="listDecks">
 			<?php
@@ -18,7 +17,7 @@
 				$res =  mysqli_query($con, $query);
 				while($aux = $res->fetch_assoc()) {
 			?>
-			<a href= "changeDeck.php?id_deck=<?php echo $aux["id_deck"] ?>" class="list-group-item"><?php echo $aux["name"] ?> </a>
+			<a href= "playDeck.php?id_deck=<?php echo $aux["id_deck"] ?>" class="list-group-item"><?php echo $aux["name"] ?> <span class="badge">1</span></a>
 			<?php
 				}
 			?>

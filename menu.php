@@ -42,7 +42,8 @@
 							<ul class="nav navbar-nav" id="navTop">
 								<!-- <li><a href="">Home</a></li> -->
 								<li><a href="profile.php">Account</a></li>
-								<li><a href="homeDeck.php">Decks</a></li>
+								<li><a href="homeDeck.php">Manage Decks</a></li>
+                                <li><a href="playDecks.php">Play Decks</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
 								<li><a ><?php echo $logado." "; ?></a></li>
