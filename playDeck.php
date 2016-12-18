@@ -8,7 +8,22 @@
 	//	Gets the cards from the deck that need to be played
 	$query = "select * from card where id_deck = ".$_GET['id_deck']." and card.nextPlay <= CURTIME();";
 	$res =  mysqli_query($con, $query);
-	$card = $res->fetch_assoc();	// Card from the top of the pile
+
+	//	If there are cards to play
+	if($res){
+		$card = $res->fetch_assoc();	// Card from the top of the pile
+	}
+
+	//	If there aren't cards to play
+	else{
+		echo "there aren't cards to play right now.";
+		return;	//	Aqui vai dar merda
+	}
+
+	//	DATE_ADD(datefield, INTERVAL 30 MINUTE)
+	//	UPDATE NOME_DA_TABELA SET campo1 = valor1, campo2 = valor2.
+
+
 ?>
 
 <script>
@@ -21,6 +36,22 @@ function showAnswer(){
 
 	return true;
 }
+
+
+
+
+function play(score){
+	window.location = "playCard.php?id_deck="+
+	<?php
+	 	echo $_GET['id_deck'];
+	?> + "&score=" + score + "&id_card=" +
+	<?php
+	 	echo $card['id'];
+	?>;
+
+}
+
+
 </script>
 
 
@@ -49,13 +80,13 @@ function showAnswer(){
 
 			<div class="btn-group btn-group-justified" role="group" aria-label="...">
   				<div class="btn-group" role="group">
-    				<button type="button" class="btn btn-default">Easy</button>
+    				<button type="button" class="btn btn-default" onclick="play(1);">Easy</button>
   				</div>
 	  			<div class="btn-group" role="group">
-	    				<button type="button" class="btn btn-default">Ok</button>
+	    				<button type="button" class="btn btn-default" onclick="play(0);">Ok</button>
 	  			</div>
 	  			<div class="btn-group" role="group">
-	    			<button type="button" class="btn btn-default">Hard</button>
+	    			<button type="button" class="btn btn-default" onclick="play(-1);">Hard</button>
 	  			</div>
 			</div>
 		</div>
