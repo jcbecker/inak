@@ -9,10 +9,7 @@
 					echo "Failed to connect to MySQL: " . mysqli_connect_error();
 					return;
 				}
-				/*
-				$query = "INSERT INTO deck (name,shared,ownerId) VALUES ('".$name."','".$shared."','".$idUserDeck."')";
-				$res = mysqli_query($con, $query);
-				*/
+
 				$query = "select * from deck where ownerId = '".$_SESSION['email']."'";
 				$res =  mysqli_query($con, $query);
 				while($aux = $res->fetch_assoc()) {
