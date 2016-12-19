@@ -63,7 +63,9 @@ function play(score){
 			<div class="panel panel-default">
   					<div class="panel-body">
 						<div id="front" style="visibility: visible; display: block; text-align: center; width: 50%; float: left">
-							<?php echo $card["front"]; ?>
+							<?php
+								if($card) echo $card["front"];
+								else echo "There aren't cards to play right now."; ?>
 						</div>
 
 						<div id="back" style="visibility: hidden; display: block; text-align: center; width: 50%; float: right">
