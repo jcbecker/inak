@@ -38,20 +38,21 @@
     			$card["box_id"] = 0;
     		}
 
-    		$query = "UPDATE card SET nextPlay = DATE_ADD(CURTIME(), INTERVAL power(2,".$card["box_id"].") MINUTE), box_id = ".$card["box_id"]." where id = ".$card["id"];
+    		$query = "UPDATE card SET nextPlay = DATE_ADD(NOW(), INTERVAL power(2,".$card["box_id"].") MINUTE), box_id = ".$card["box_id"]." where id = ".$card["id"];
     		$res =  mysqli_query($con, $query);
     		header("location: playDeck.php?id_deck=".$_GET['id_deck']);
     	}
     	else if($score = 0){
-            $query = "UPDATE card SET nextPlay = DATE_ADD(CURTIME(), INTERVAL power(2,".$card["box_id"].") MINUTE) where id = ".$card["id"];
+            $query = "UPDATE card SET nextPlay = DATE_ADD(NOW(), INTERVAL power(2,".$card["box_id"].") MINUTE) where id = ".$card["id"];
             $res =  mysqli_query($con, $query);
             header("location: playDeck.php?id_deck=".$_GET['id_deck']);
     	}
     	else{
             $card["box_id"] += 1;
 
-            $query = "UPDATE card SET nextPlay = DATE_ADD(CURTIME(), INTERVAL power(2,".$card["box_id"].") MINUTE), box_id = ".$card["box_id"]." where id = ".$card["id"];
+            $query = "UPDATE card SET nextPlay = DATE_ADD(NOW(), INTERVAL power(2,".$card["box_id"].") MINUTE), box_id = ".$card["box_id"]." where id = ".$card["id"];
             $res =  mysqli_query($con, $query);
+            echo $query;
             header("location: playDeck.php?id_deck=".$_GET['id_deck']);
     	}
 }
