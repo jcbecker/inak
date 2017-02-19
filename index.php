@@ -48,8 +48,7 @@
 		<h1>Welcome to INAK!</h1>
 		<p style="text-align:justify">
 		Here you can learn using Flash Cards . Based TWO Fundamentals structures ,
-		which are decks ( platforms) and the card ( cards). CARDS THE INFORMATION What are like wish memorize texts may be ,
-		Images , mental maps .</p>
+		which are decks ( platforms) and the card ( cards). CARDS THE INFORMATION What are like wish memorize texts. </p>
 	</div>
 </div>
 

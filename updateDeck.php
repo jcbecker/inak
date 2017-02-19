@@ -6,22 +6,20 @@
 		header("Location: index.php");
 	require_once("database.php");
 	$deckName = "inputName";
-	$deckShared = "inputShared";
 	$var = $_POST["id_deck"];
 	$GO = "changeDeck.php?id_deck=".$var;	//Load after correct register
-	if(!isset($_POST[$deckName]) || !isset($_POST[$deckShared])){
+	if(!isset($_POST[$deckName])){
 		header("Location: changeDeck.php?id_deck=".$var);
 		return;
 	}
 	$name = $_POST[$deckName];
-	$shared = $_POST[$deckShared];
 	$idDeck = $_POST["id_deck"];
 	$con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 	if (mysqli_connect_errno()){
 		echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		return;
 	}
-	$query = "UPDATE deck SET name='".$name."', shared='".$shared."'";
+	$query = "UPDATE deck SET name='".$name."'";
 	$query.= " WHERE id_deck = '".$idDeck."'";
 	$res = mysqli_query($con, $query);
 	if(!$res){ // || (mysqli_affected_rows($con)==0)
