@@ -42,7 +42,6 @@
 				<thead>
 					<tr>
 						<th>Front</th>
-						<th>Back</th>
 						<th></th>
 						<th></th>
 					</tr>
@@ -55,7 +54,6 @@
 					?>
 					<tr>
 						<td><?php echo $aux2["front"] ?></td>
-						<td><?php echo $aux2["back"] ?></td>
 						<td><a href="updateCard.php?id=<?php echo $aux2["id"]?>">Update</a></td>
 						<td><a href="deleteCard.php?id=<?php echo $aux2["id"]?>&id_deck=<?php echo $aux["id_deck"]?>">Delete</a></td>
 					</tr>

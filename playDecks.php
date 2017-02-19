@@ -14,7 +14,7 @@
 				$res =  mysqli_query($con, $query);
 				while($aux = $res->fetch_assoc()) {
 			?>
-			<a href= "playDeck.php?id_deck=<?php echo $aux["id_deck"] ?>" class="list-group-item"><?php echo $aux["name"] ?> <span class="badge">1</span></a>
+			<a href= "playDeck.php?id_deck=<?php echo $aux["id_deck"] ?>" class="list-group-item"><?php echo $aux["name"] ?> </a>
 			<?php
 				}
 			?>

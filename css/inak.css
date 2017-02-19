@@ -41,3 +41,9 @@ footer {
 	font-size:18px;
 	text-align:center;
 }
+
+ #profile_card{
+     height: auto;
+     width: 45%;
+     margin: auto auto auto 28%;
+}
