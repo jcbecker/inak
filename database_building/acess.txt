@@ -1,0 +1,5 @@
+db name: inak
+db user: admin
+db pass: engenharia
+
+se orientar pelo database.php não por aqui.
