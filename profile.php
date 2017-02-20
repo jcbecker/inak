@@ -12,7 +12,7 @@
 			<div id = "profile_text">
 				<p><b>Nick:</b> <?php echo $_SESSION['user']." "; ?></p></p>
 				<p><b>E-mail:</b> <?php echo $_SESSION['email']." "; ?></p>
-				<p><b>Decks:</b> 333</p>
+				<!-- <p><b>Decks:</b> 333</p> -->
 			</div>
 			<button class="btn btn-lg btn-primary btn-block" onclick="window.location.href='editProfile.php'">Edit Account</button>
 			<!-- Trigger the modal with a button -->
