@@ -17,13 +17,11 @@
 	//	If there aren't cards to play
 	else{
 		echo "there aren't cards to play right now.";
-		return;	//	Aqui vai dar merda
+		return;
 	}
 
 	//	DATE_ADD(datefield, INTERVAL 30 MINUTE)
 	//	UPDATE NOME_DA_TABELA SET campo1 = valor1, campo2 = valor2.
-
-
 ?>
 
 <script>
@@ -38,8 +36,6 @@ function showAnswer(){
 }
 
 
-
-
 function play(score){
 	window.location = "playCard.php?id_deck="+
 	<?php
@@ -51,15 +47,14 @@ function play(score){
 
 }
 
-
 </script>
 
 
-<link href="css/card_style.css" rel="stylesheet">
+
 <div class="container" style="margin-bottom:50px;">
 	<h2><span class="label label-primary"><?php echo $aux['name'] ?> </span></h2>
 	<div class="row">
-		<div class="col-md-6" id ="profile_body" style="margin-top:50px;">
+		<div class="col-md-6"  style=" height: auto; width: 70%;margin: 50px auto auto 13%; font-size: 30px">
 			<div class="panel panel-default">
   					<div class="panel-body">
 						<div id="front" style="visibility: visible; display: block; text-align: center; width: 50%; float: left">

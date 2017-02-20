@@ -21,6 +21,12 @@
      width: 45%;
      margin: auto auto auto 28%;
 }
+
+#profileplaydeck{
+    height: auto;
+    width: 45%;
+    margin: auto auto auto 28%;
+}
 .containerProfile{
      background-color: gray;
 }

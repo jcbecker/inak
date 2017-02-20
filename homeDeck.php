@@ -17,8 +17,12 @@
 				$query = "select * from deck where ownerId = '".$_SESSION['email']."'";
 				$res =  mysqli_query($con, $query);
 				while($aux = $res->fetch_assoc()) {
+					$queryCount = "select count(id) as qtd from card where id_deck = '".$aux["id_deck"]."'";
+					$result =  mysqli_query($con, $queryCount);
+
+					$valor = $result->fetch_assoc();
 			?>
-			<a href= "changeDeck.php?id_deck=<?php echo $aux["id_deck"] ?>" class="list-group-item"><?php echo $aux["name"] ?> </a>
+			<a href= "changeDeck.php?id_deck=<?php echo $aux["id_deck"] ?>" class="list-group-item"><?php echo $aux["name"] ?> <span class="badge"><?php echo $valor["qtd"] ?></span></a></a>
 			<?php
 				}
 			?>
